@@ -3,7 +3,8 @@ Elit BIM is a custom Revit tab created using pyRevit and Python, featuring a ran
 
 # How to Use This Tool:
 Install pyRevit
-Download and install the pyRevit plugin from the link below:
+
+Download and install the pyRevit plugin from Pyrevit Notion bord:
 
 Download.pyRevit
 
