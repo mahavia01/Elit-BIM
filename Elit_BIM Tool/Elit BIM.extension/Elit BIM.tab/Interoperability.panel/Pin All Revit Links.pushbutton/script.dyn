@@ -1,0 +1,692 @@
+{
+  "Uuid": "2642d4c7-4194-4c38-a43c-393fe302a86f",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "script",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "7383ffeed6cb4586a1d771f22fb83d38",
+      "Name": "Boolean",
+      "Type": "boolean",
+      "Value": "true",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "Id": "a07f3a659c794de382ce96b500a29b51",
+      "Name": "Boolean",
+      "Type": "boolean",
+      "Value": "true",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "Id": "af39fec34b254dffb0ac9c47ad9c598d",
+      "Name": "Boolean",
+      "Type": "boolean",
+      "Value": "true",
+      "Description": "Selection between a true and false."
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 491,
+      "SelectedString": "OST_RvtLinks",
+      "NodeType": "ExtensionNode",
+      "Id": "ffa9fe0b795441a7aa791436ba71cf92",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eecc571e56e94e8e9beda59630a83918",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "2addff1bafe7479e81bae8c9564e2264",
+      "Inputs": [
+        {
+          "Id": "33b3e3199dfa43b8b60e30e773714627",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fcf53b7cc24f4e109291fc31c4a3f1e2",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetPinnedStatus@bool",
+      "Id": "ccca2381ec8b45849464dee04db3feb8",
+      "Inputs": [
+        {
+          "Id": "0f3b734893094e0daf43bb05431becaa",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c485e7c71a1746fb86e9b7b5041b1723",
+          "Name": "pinned",
+          "Description": "Value for pin status true/false\n\nbool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bc556e9123ce4d5ebcc9089fc766e194",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets an existing element's pinned status\n\nElement.SetPinnedStatus (pinned: bool): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "7383ffeed6cb4586a1d771f22fb83d38",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eee763b48f664c3c927a702ec2d23cb0",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "5138521f3d9047cb808e2b9bf05fbe87",
+      "Inputs": [
+        {
+          "Id": "913aa8e859834832b1850ede50100880",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c85072e485914ab1a6f060180cbee2ff",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "6722ff34d2324ed9813486cb70921aa2",
+      "Inputs": [
+        {
+          "Id": "533717af620342fca64b5f791557a0ce",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "31b867e029a548bfb89628be29033f18",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "3d65d6fac0e04a4f94268444c7afeb21",
+      "Inputs": [
+        {
+          "Id": "ae12ab5b2a1d45449da72f817893459e",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4bf7ece05ce24f4b884c2f3d4c4a9de9",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetPinnedStatus@bool",
+      "Id": "be505c69797a49fd8c0b836fd039feba",
+      "Inputs": [
+        {
+          "Id": "ccb3db0dd6574a7a82a08613523f6733",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "583d72e24d834b189ee5b3087c333343",
+          "Name": "pinned",
+          "Description": "Value for pin status true/false\n\nbool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d6d9c22364174cf180a6633428d447dc",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets an existing element's pinned status\n\nElement.SetPinnedStatus (pinned: bool): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "a07f3a659c794de382ce96b500a29b51",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1398c54eed8a4a52ae37ddf3521fb91e",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 269,
+      "SelectedString": "OST_Grids",
+      "NodeType": "ExtensionNode",
+      "Id": "d54bb4a5130f4ffd849df2ceba21ab0d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "212ca8a0e51b442eafce10c7a5b5c2bb",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "8ab63d8503574ccd9cfe0d629af2cda8",
+      "Inputs": [
+        {
+          "Id": "08803f5e8b3940d0b1177c998a83ce76",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c77823f65f344bd994e01f6a2954b19e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "78d58d3ef8884d3c9b441b2e2e50eca6",
+      "Inputs": [
+        {
+          "Id": "0f3f8c3ac05e4238a22593009f9fde78",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1e15e089a1ed43df8d4660e90b53a1ef",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetPinnedStatus@bool",
+      "Id": "3049bc82c21a403696b9e37cd27982ff",
+      "Inputs": [
+        {
+          "Id": "92d80180c6f9494496f8e38baaeaa3f2",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7ead1ed3fa3b437c93a5579481f73f8d",
+          "Name": "pinned",
+          "Description": "Value for pin status true/false\n\nbool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9b563184be7e49069a532e2a69b9bf61",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets an existing element's pinned status\n\nElement.SetPinnedStatus (pinned: bool): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "af39fec34b254dffb0ac9c47ad9c598d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f719d550116b4fd2a0b3d9731a04ec6f",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 287,
+      "SelectedString": "OST_Levels",
+      "NodeType": "ExtensionNode",
+      "Id": "4d48b66291f541849d7ec3ac5ff801ac",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "119f8d9ed09f4b65b57bbf91a5858430",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "eecc571e56e94e8e9beda59630a83918",
+      "End": "33b3e3199dfa43b8b60e30e773714627",
+      "Id": "076bf32c15c1424aa65289b7737697a4"
+    },
+    {
+      "Start": "fcf53b7cc24f4e109291fc31c4a3f1e2",
+      "End": "0f3b734893094e0daf43bb05431becaa",
+      "Id": "9c41a55917724bbcb674e711e7dfd1ad"
+    },
+    {
+      "Start": "bc556e9123ce4d5ebcc9089fc766e194",
+      "End": "913aa8e859834832b1850ede50100880",
+      "Id": "1fe7d1049d3a4b2cb5ba58b7ef86962b"
+    },
+    {
+      "Start": "eee763b48f664c3c927a702ec2d23cb0",
+      "End": "c485e7c71a1746fb86e9b7b5041b1723",
+      "Id": "46a8856841e24c9789f43a5a7d68bb53"
+    },
+    {
+      "Start": "4bf7ece05ce24f4b884c2f3d4c4a9de9",
+      "End": "ccb3db0dd6574a7a82a08613523f6733",
+      "Id": "74e98b8dda294e2f8aebe9ede686ef69"
+    },
+    {
+      "Start": "d6d9c22364174cf180a6633428d447dc",
+      "End": "533717af620342fca64b5f791557a0ce",
+      "Id": "d500ab1c66ad42a3bc6ffa1d66619935"
+    },
+    {
+      "Start": "1398c54eed8a4a52ae37ddf3521fb91e",
+      "End": "583d72e24d834b189ee5b3087c333343",
+      "Id": "11289fa9da354192b284e1c6a99404e7"
+    },
+    {
+      "Start": "212ca8a0e51b442eafce10c7a5b5c2bb",
+      "End": "ae12ab5b2a1d45449da72f817893459e",
+      "Id": "8f992c3f65154461a28d0a919b3256ab"
+    },
+    {
+      "Start": "1e15e089a1ed43df8d4660e90b53a1ef",
+      "End": "92d80180c6f9494496f8e38baaeaa3f2",
+      "Id": "3d36cee0cc1146e1846aac391f6133d7"
+    },
+    {
+      "Start": "9b563184be7e49069a532e2a69b9bf61",
+      "End": "08803f5e8b3940d0b1177c998a83ce76",
+      "Id": "f67de403d0334add9ba697480f1686ee"
+    },
+    {
+      "Start": "f719d550116b4fd2a0b3d9731a04ec6f",
+      "End": "7ead1ed3fa3b437c93a5579481f73f8d",
+      "Id": "a142ea7b3e0e4cebb647199265ad16c9"
+    },
+    {
+      "Start": "119f8d9ed09f4b65b57bbf91a5858430",
+      "End": "0f3f8c3ac05e4238a22593009f9fde78",
+      "Id": "263123a8123548d09d3024025531b5f3"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.10.1.3976",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "ffa9fe0b795441a7aa791436ba71cf92",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 102.25916182255924,
+        "Y": 77.779698526419338
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "2addff1bafe7479e81bae8c9564e2264",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 368.0,
+        "Y": 169.52774577173972
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetPinnedStatus",
+        "Id": "ccca2381ec8b45849464dee04db3feb8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 600.47015540915186,
+        "Y": 131.47266057811646
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "7383ffeed6cb4586a1d771f22fb83d38",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 386.34416540690881,
+        "Y": 273.8895011153536
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "5138521f3d9047cb808e2b9bf05fbe87",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 874.25294693657236,
+        "Y": 210.98212549756249
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "6722ff34d2324ed9813486cb70921aa2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 872.89465211108359,
+        "Y": 463.36191041235804
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "3d65d6fac0e04a4f94268444c7afeb21",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 366.64170517451146,
+        "Y": 421.90753068653606
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetPinnedStatus",
+        "Id": "be505c69797a49fd8c0b836fd039feba",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 599.11186058366343,
+        "Y": 383.85244549291207
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "a07f3a659c794de382ce96b500a29b51",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 384.98587058142039,
+        "Y": 526.26928603015
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "d54bb4a5130f4ffd849df2ceba21ab0d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 100.90086699707047,
+        "Y": 330.15948344121534
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "8ab63d8503574ccd9cfe0d629af2cda8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 854.19980058109149,
+        "Y": 672.14734172138424
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "78d58d3ef8884d3c9b441b2e2e50eca6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 347.94685364451948,
+        "Y": 630.6929619955622
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetPinnedStatus",
+        "Id": "3049bc82c21a403696b9e37cd27982ff",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 580.41700905367145,
+        "Y": 592.63787680193832
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "af39fec34b254dffb0ac9c47ad9c598d",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 366.29101905142852,
+        "Y": 735.05471733917625
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "4d48b66291f541849d7ec3ac5ff801ac",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 82.206015467078487,
+        "Y": 538.94491475024154
+      }
+    ],
+    "Annotations": [],
+    "X": -58.276972586521111,
+    "Y": 186.62708575496731,
+    "Zoom": 0.37997273711435492
+  }
+}
